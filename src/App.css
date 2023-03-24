@@ -22,9 +22,14 @@ body {
     font-family: 'DM Sans', sans-serif;
 }
 
+html {
+    font-size: 62.5%;
+}
+
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    font-size: 1.6rem;
 }
 
 img,
@@ -72,4 +77,16 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 50% !important;
+    }
+}
+
+@media (max-width: 425px) {
+    html {
+        font-size: 37.5% !important;
+    }
 }
