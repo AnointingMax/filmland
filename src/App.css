@@ -56,3 +56,19 @@ h6 {
 #__next {
     isolation: isolate;
 }
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+div.body {
+    flex: 1;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
