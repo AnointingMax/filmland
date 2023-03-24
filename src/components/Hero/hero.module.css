@@ -1,0 +1,129 @@
+.hero {
+    --height: 70vh;
+
+    position: relative;
+    height: var(--height);
+}
+
+.heroDots {
+    position: absolute;
+    right: 5px;
+    display: flex !important;
+    flex-direction: column;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: center;
+}
+
+.heroDots li {
+    list-style: none;
+}
+
+.heroDots li button {
+    border: none;
+    background-color: transparent;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: var(--light-grey);
+}
+
+.heroDots li[class^="slick-active"] button {
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.4rem;
+    color: var(--white);
+    position: relative;
+}
+
+.heroDots li[class^="slick-active"] button::before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30%;
+    height: 2px;
+    background-color: var(--white);
+    transition: 1s ease-in-out all;
+}
+
+.slide {
+    position: relative;
+    height: var(--height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    padding-inline: var(--padding);
+}
+
+.slidePoster {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slideInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sliderHeader {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+    color: var(--white);
+}
+
+.sliderDesc {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    color: var(--white);
+    width: clamp(150px, 50vw, 300px);
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.watchButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px;
+    background: var(--primary-color);
+    border-radius: 6px;
+    border: none;
+    width: fit-content;
+    gap: 10px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+@media (min-width: 768px) {
+    .slideInfo {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        --height: 50vh;
+    }
+}
