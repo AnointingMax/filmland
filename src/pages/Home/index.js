@@ -5,6 +5,8 @@ import {
 	Movie,
 	movieSliderSettings,
 	Slider,
+	Video,
+	videoSliderSettings,
 } from "components";
 import React from "react";
 // import styles from "./home.module.css";
@@ -22,6 +24,11 @@ const Home = () => {
 				title="New Arrival"
 				InnerComponent={Movie}
 				settings={movieSliderSettings}
+			/>
+			<Slider
+				title="Exclusive Videos"
+				InnerComponent={Video}
+				settings={videoSliderSettings}
 			/>
 			<Slider
 				title="Featured Casts"

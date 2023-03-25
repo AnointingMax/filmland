@@ -24,6 +24,11 @@
     transform: translateY(-300%);
 }
 
+div[class*="castwrap"]>.customRightArrow,
+div[class*="castwrap"]>.customLeftArrow {
+    transform: translateY(-50%);
+}
+
 .link {
     display: flex;
     align-items: center;

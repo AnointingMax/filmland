@@ -99,4 +99,8 @@ footer {
     html {
         font-size: 40% !important;
     }
+
+    .videowrap .slick-list {
+        width: 95% !important;
+    }
 }

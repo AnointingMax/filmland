@@ -1,0 +1,28 @@
+.videoWrapper {
+    text-decoration: none;
+    color: inherit;
+}
+
+.videoWrapper>* {
+    width: 85%;
+}
+
+.videoImage {
+    object-fit: cover;
+}
+
+.customRightArrow,
+.customLeftArrow {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width:425px) {
+    .customRightArrow {
+        right: 0;
+    }
+
+    .customLeftArrow {
+        left: 0;
+    }
+}

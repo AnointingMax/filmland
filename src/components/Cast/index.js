@@ -19,6 +19,7 @@ const Cast = () => {
 export default Cast;
 
 export const castSliderSettings = {
+	className: "castwrap",
 	slidesToShow: 6,
 	slidesToScroll: 1,
 	responsive: [
