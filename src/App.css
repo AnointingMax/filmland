@@ -93,7 +93,7 @@ footer {
 
 @media (max-width: 425px) {
     :root {
-        --padding: 1.5rem;
+        --padding: 3rem;
     }
 
     html {
