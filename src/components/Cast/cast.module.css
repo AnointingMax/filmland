@@ -1,0 +1,44 @@
+.cast {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cast>* {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.castImageWrapper {
+    width: 90%;
+    max-height: 370px;
+    overflow: hidden;
+    position: relative;
+}
+
+.castImage {
+    width: 100%;
+    object-fit: cover;
+}
+
+.cast:hover .castName {
+    text-decoration: underline;
+}
+
+.castInfo {
+    padding-top: 1.2rem;
+}
+
+.castName {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 23px;
+    color: var(--blackish);
+}
+
+@media (max-width:425px) {
+    .cast>* {
+        width: 85%;
+        margin-inline: auto;
+    }
+}

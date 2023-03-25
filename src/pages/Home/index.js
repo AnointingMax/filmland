@@ -1,4 +1,11 @@
-import { Hero, Movie, movieSliderSettings, Slider } from "components";
+import {
+	Cast,
+	castSliderSettings,
+	Hero,
+	Movie,
+	movieSliderSettings,
+	Slider,
+} from "components";
 import React from "react";
 // import styles from "./home.module.css";
 
@@ -15,6 +22,11 @@ const Home = () => {
 				title="New Arrival"
 				InnerComponent={Movie}
 				settings={movieSliderSettings}
+			/>
+			<Slider
+				title="Featured Casts"
+				InnerComponent={Cast}
+				settings={castSliderSettings}
 			/>
 		</>
 	);
