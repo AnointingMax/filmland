@@ -5,6 +5,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import poster from "assets/poster.png";
 import { IMDBIcon, PlayIcon, TomatoIcon } from "assets/svg";
+import { useQuery } from "react-query";
+import { getUpcomingMovies } from "api";
+import { useAppContext } from "context/AppContext";
 
 const Hero = () => {
 	const settings = {
@@ -19,41 +22,48 @@ const Hero = () => {
 		autoplay: true,
 		autoplaySpeed: 5000,
 	};
+
+	const { data } = useQuery({
+		queryKey: ["hero"],
+		queryFn: getUpcomingMovies,
+	});
+
 	return (
 		<div className={styles.hero}>
 			<TopNav />
 
 			<Slider {...settings}>
-				<Slide />
-				<Slide />
-				<Slide />
-				<Slide />
+				{data?.results?.slice(0, 4).map((props) => (
+					<Slide key={props?.id} {...props} />
+				))}
 			</Slider>
 		</div>
 	);
 };
 
-const Slide = () => {
+const Slide = (props) => {
+	const { imageConfig } = useAppContext();
+
 	return (
 		<div className={styles.slide}>
-			<img src={poster} alt="poster" className={styles.slidePoster} />
+			<img
+				src={`${imageConfig?.base_url}/w1280${props.backdrop_path}`}
+				alt="poster"
+				className={styles.slidePoster}
+			/>
 			<div className={styles.slideInfo}>
-				<h2 className={styles.sliderHeader}>John Wick 3 : Parabellum</h2>
+				<h2 className={styles.sliderHeader}>{props?.title}</h2>
 				<div className={styles.row} style={{ gap: "2rem" }}>
 					<div className={styles.row}>
 						<IMDBIcon />
-						86.0 / 100
+						{props?.vote_average} / 10
 					</div>
 					<div className={styles.row}>
 						<TomatoIcon />
-						97%
+						{props?.vote_count}
 					</div>
 				</div>
-				<p className={styles.sliderDesc}>
-					John Wick is on the run after killing a member of the international
-					assassins' guild, and with a $14 million price tag on his head, he is
-					the target of hit men and women everywhere.
-				</p>
+				<p className={styles.sliderDesc}>{props?.overview}</p>
 				<button className={styles.watchButton}>
 					<PlayIcon /> Watch Trailer
 				</button>
