@@ -1,38 +1,48 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HeartIcon, IMDBIcon, TomatoIcon } from "assets/svg";
-import poster2 from "assets/poster2.png";
 import styles from "./movie.module.css";
+import { useAppContext } from "context/AppContext";
 
-const Movie = () => {
+const Movie = (props) => {
+	const { imageConfig } = useAppContext();
+
+	const year = new Date(props?.release_date).getFullYear();
+
 	return (
 		<Link to="#" className={styles.movie}>
 			<div className={styles.movieImageWrapper}>
-				<img src={poster2} alt="" className={styles.movieImage} />
-				<div className={`${styles.movieIcon} ${styles.movieLeftIcon}`}>
+				<img
+					src={`${imageConfig?.base_url}/original${props.poster_path}`}
+					alt=""
+					className={styles.movieImage}
+				/>
+				{/* <div className={`${styles.movieIcon} ${styles.movieLeftIcon}`}>
 					<p className={styles.tag}>TV SERIES</p>
-				</div>
+				</div> */}
 				<div className={`${styles.movieIcon} ${styles.movieRightIcon}`}>
 					<HeartIcon />
 				</div>
 			</div>
 			<div className={styles.movieInfo}>
-				<span className={styles.movieDate}>USA, 2016 - Current</span>
-				<h3 className={styles.movieName}>Stranger Things</h3>
+				<span className={styles.movieDate}>
+					{props.original_language}, {year}
+				</span>
+				<h3 className={styles.movieName}>{props?.title}</h3>
 				<div className={styles.rowContainer}>
 					<div className={styles.row}>
 						<IMDBIcon />
-						<span className={styles.movieStat}>86.0 / 100</span>
+						<span className={styles.movieStat}>{props?.vote_average} / 10</span>
 					</div>
 					<div className={styles.row}>
 						<TomatoIcon />
-						<span className={styles.movieStat}>97%</span>
+						<span className={styles.movieStat}>{props?.vote_count}</span>
 					</div>
 				</div>
 				<div className={styles.movieGenre}>
-					<span className={styles.movieGenre}>Action</span>
-					<span className={styles.movieGenre}>, Adventure</span>
-					<span className={styles.movieGenre}>, Horror</span>
+					{props?.genre_ids.map((genre, index) => (
+						<Genre genre={genre} key={genre} index={index} />
+					))}
 				</div>
 			</div>
 		</Link>
@@ -40,6 +50,19 @@ const Movie = () => {
 };
 
 export default Movie;
+
+const Genre = ({ genre: genreID, index }) => {
+	const { genres } = useAppContext();
+
+	const selectedGenre = genres.find((genre) => genre.id === genreID)["name"];
+
+	return (
+		<span className={styles.movieGenre}>
+			{index !== 0 && ", "}
+			{selectedGenre}
+		</span>
+	);
+};
 
 export const movieSliderSettings = {
 	slidesToShow: 6,

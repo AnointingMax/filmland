@@ -5,6 +5,7 @@ import styles from "./slider.module.css";
 import SlickSlider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useQuery } from "react-query";
 
 function SampleNextArrow(props) {
 	const { className, style, onClick } = props;
@@ -28,7 +29,14 @@ function SamplePrevArrow(props) {
 	);
 }
 
-const Slider = ({ title, link, InnerComponent, settings: customSettings }) => {
+const Slider = ({
+	title,
+	link,
+	InnerComponent,
+	settings: customSettings,
+	queryFN,
+	queryname,
+}) => {
 	const settings = {
 		dots: false,
 		arrows: true,
@@ -40,6 +48,13 @@ const Slider = ({ title, link, InnerComponent, settings: customSettings }) => {
 		autoplaySpeed: 5000,
 		...customSettings,
 	};
+
+	const { data } = useQuery({
+		queryKey: [queryname],
+		queryFn: queryFN,
+		refetchOnWindowFocus: false,
+	});
+
 	return (
 		<div className={styles.sliderWrapper}>
 			<div className={styles.sliderHeader}>
@@ -51,11 +66,9 @@ const Slider = ({ title, link, InnerComponent, settings: customSettings }) => {
 			</div>
 
 			<SlickSlider {...settings}>
-				{Array(10)
-					.fill(" ")
-					.map((_, index) => (
-						<InnerComponent key={index} />
-					))}
+				{data?.results.map((props, index) => (
+					<InnerComponent key={index} {...props} />
+				))}
 			</SlickSlider>
 		</div>
 	);
