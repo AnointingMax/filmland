@@ -14,7 +14,7 @@ const Movie = (props) => {
 			<div className={styles.movieImageWrapper}>
 				<img
 					src={`${imageConfig?.base_url}/original${props.poster_path}`}
-					alt=""
+					alt="movie"
 					className={styles.movieImage}
 				/>
 				{/* <div className={`${styles.movieIcon} ${styles.movieLeftIcon}`}>

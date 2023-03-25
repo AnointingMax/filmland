@@ -11,7 +11,7 @@ const Cast = (props) => {
 			<div className={styles.castImageWrapper}>
 				<img
 					src={`${imageConfig?.base_url}/original${props.profile_path}`}
-					alt=""
+					alt="cast-member"
 					className={styles.castImage}
 				/>
 			</div>

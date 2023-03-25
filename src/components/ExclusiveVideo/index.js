@@ -34,7 +34,7 @@ const Video = (props) => {
 			<div className={styles.videoImageWrapper}>
 				<img
 					src={`${imageConfig?.base_url}/w1280${props.backdrop_path}`}
-					alt=""
+					alt="featured-video"
 					className={styles.videoImage}
 				/>
 				<PlayOutlineIcon className={styles.center} />
