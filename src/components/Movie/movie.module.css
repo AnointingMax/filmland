@@ -1,0 +1,120 @@
+.rowContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.movie {
+    text-decoration: none;
+    color: inherit;
+}
+
+.movie>* {
+    width: 90%;
+    margin-inline: auto;
+}
+
+.movie:hover .movieName {
+    text-decoration: underline;
+}
+
+.movieImageWrapper {
+    --inner-padding: 16px;
+
+    width: 90%;
+    max-height: 370px;
+    overflow: hidden;
+    position: relative;
+}
+
+.movieIcon {
+    position: absolute;
+    padding: 7px;
+    background: rgba(243, 244, 246, 0.5);
+    backdrop-filter: blur(1px);
+    z-index: 2;
+    top: var(--inner-padding);
+}
+
+.movieLeftIcon {
+    border-radius: 15px;
+    left: var(--inner-padding);
+}
+
+.movieRightIcon {
+    border-radius: 50%;
+    right: var(--inner-padding);
+}
+
+.tag {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--blackish);
+    text-transform: uppercase;
+}
+
+.movieImage {
+    width: 100%;
+    object-fit: cover;
+}
+
+.movieInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding-block: 1rem;
+}
+
+.movieDate {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--light-grey);
+}
+
+.movieName {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: var(--blackish);
+}
+
+.movieStat {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: var(--blackish);
+}
+
+.movieGenre {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--light-grey);
+}
+
+@media (max-width:425px) {
+    .movie>* {
+        width: 85%;
+        margin-inline: auto;
+    }
+}
+
+@media (min-width:425px) {
+    .rowContainer {
+        margin-right: 10%;
+    }
+}
