@@ -66,8 +66,8 @@ const Slider = ({
 			</div>
 
 			<SlickSlider {...settings}>
-				{data?.results.map((props, index) => (
-					<InnerComponent key={index} {...props} />
+				{data?.results?.map((props) => (
+					<InnerComponent key={props?.id} {...props} />
 				))}
 			</SlickSlider>
 		</div>
