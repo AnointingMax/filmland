@@ -5,7 +5,7 @@ import { Home } from "pages";
 
 function App() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename="/filmland">
 			<Routes>
 				<Route Component={Wrapper}>
 					<Route index Component={Home} />
