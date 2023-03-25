@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/filmland/static/css/main.fa76730a.css",
+    "main.js": "/filmland/static/js/main.94638640.js",
+    "static/media/tomato.svg": "/filmland/static/media/tomato.50c6902436851a6cc90f58a95003f6f4.svg",
+    "static/media/imdb.svg": "/filmland/static/media/imdb.9283a36cd922e66760bbaffb4ae20dbb.svg",
+    "static/media/slick.svg": "/filmland/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/instagram.svg": "/filmland/static/media/instagram.fc13803a938e2fa77281c62277fd7f47.svg",
+    "static/media/slick.eot": "/filmland/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/filmland/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/filmland/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/twitter.svg": "/filmland/static/media/twitter.1d0c34751715cbf853634fe8e2307a4a.svg",
+    "index.html": "/filmland/index.html",
+    "static/media/facebook.svg": "/filmland/static/media/facebook.f4f5dbea4f4df8c53f8ebb0227fd3b95.svg",
+    "static/media/youtube.svg": "/filmland/static/media/youtube.c4eb95419a7fbee51eeae6c490dce2ea.svg",
+    "static/media/burger.svg": "/filmland/static/media/burger.7566fb94f25fc1d2f2dfb2d3c19d3909.svg",
+    "static/media/play2.svg": "/filmland/static/media/play2.fcebb834a42e2aa3f88f6725a9e9a1ff.svg",
+    "static/media/play.svg": "/filmland/static/media/play.54d9d33850e26b93a772122a686db4c8.svg",
+    "static/media/heart.svg": "/filmland/static/media/heart.2bf355ebb1aa20460522e2806e78d915.svg",
+    "static/media/search.svg": "/filmland/static/media/search.ddcc2e0838c1d52b4d016f97877b1c70.svg",
+    "static/media/left-arrow.svg": "/filmland/static/media/left-arrow.5e674eedb8f1ac4aaff3902235b6f901.svg",
+    "static/media/right-arrow.svg": "/filmland/static/media/right-arrow.b616f46085daf0545074f224c8556a85.svg",
+    "main.fa76730a.css.map": "/filmland/static/css/main.fa76730a.css.map",
+    "main.94638640.js.map": "/filmland/static/js/main.94638640.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa76730a.css",
+    "static/js/main.94638640.js"
+  ]
+}
