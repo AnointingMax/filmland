@@ -1,16 +1,22 @@
 import React from "react";
-import image from "assets/cast.png";
 import { Link } from "react-router-dom";
 import styles from "./cast.module.css";
+import { useAppContext } from "context/AppContext";
 
-const Cast = () => {
+const Cast = (props) => {
+	const { imageConfig } = useAppContext();
+
 	return (
 		<Link to="#" className={styles.cast}>
 			<div className={styles.castImageWrapper}>
-				<img src={image} alt="" className={styles.castImage} />
+				<img
+					src={`${imageConfig?.base_url}/original${props.profile_path}`}
+					alt=""
+					className={styles.castImage}
+				/>
 			</div>
 			<div className={styles.castInfo}>
-				<p className={styles.castName}>Keanu Reeves</p>
+				<p className={styles.castName}>{props?.name}</p>
 			</div>
 		</Link>
 	);
