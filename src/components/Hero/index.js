@@ -3,7 +3,6 @@ import styles from "./hero.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import poster from "assets/poster.png";
 import { IMDBIcon, PlayIcon, TomatoIcon } from "assets/svg";
 import { useQuery } from "react-query";
 import { getUpcomingMovies } from "api";
