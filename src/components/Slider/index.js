@@ -52,7 +52,6 @@ const Slider = ({
 	const { data } = useQuery({
 		queryKey: [queryname],
 		queryFn: queryFN,
-		refetchOnWindowFocus: false,
 	});
 
 	return (
