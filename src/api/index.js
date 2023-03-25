@@ -10,3 +10,5 @@ const api = axios.create({
 });
 
 api.interceptors.response.use((response) => response.data, null);
+
+export const getGenres = () => api.get("/genre/movie/list");

@@ -1,5 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { getFromStorage, setToStorage } from "constants";
+import { useQuery } from "react-query";
+import { getGenres } from "api";
 
 const AppContext = createContext();
 
@@ -10,9 +12,18 @@ const AppProvider = ({ children }) => {
 		setToStorage("genres", genres);
 	}, [genres]);
 
+	const { isLoading } = useQuery({
+		queryKey: ["genres"],
+		queryFn: getGenres,
+		onSuccess: (data) => {
+			setGenres(data.genres);
+		},
+		refetchOnWindowFocus: false,
+	});
+
 	return (
 		<AppContext.Provider value={{ genres, setGenres }}>
-			{children}
+			{isLoading ? null : children}
 		</AppContext.Provider>
 	);
 };
