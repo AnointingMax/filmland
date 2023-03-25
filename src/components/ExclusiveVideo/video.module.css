@@ -1,4 +1,7 @@
 .videoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
     text-decoration: none;
     color: inherit;
 }
@@ -7,8 +10,28 @@
     width: 85%;
 }
 
+.videoImageWrapper {
+    position: relative;
+}
+
 .videoImage {
     object-fit: cover;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.videoName {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 23px;
+    color: var(--blackish);
 }
 
 .customRightArrow,

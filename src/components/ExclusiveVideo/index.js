@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./video.module.css";
-import video from "assets/video.png";
 import { Link } from "react-router-dom";
-import { LeftArrowIcon, RightArrowIcon } from "assets/svg";
+import { LeftArrowIcon, PlayOutlineIcon, RightArrowIcon } from "assets/svg";
+import { useAppContext } from "context/AppContext";
 
 function SampleNextArrow(props) {
 	const { className, style, onClick } = props;
@@ -26,10 +26,20 @@ function SamplePrevArrow(props) {
 	);
 }
 
-const Video = () => {
+const Video = (props) => {
+	const { imageConfig } = useAppContext();
+
 	return (
 		<Link className={styles.videoWrapper}>
-			<img src={video} alt="" className={styles.videoImage} />
+			<div className={styles.videoImageWrapper}>
+				<img
+					src={`${imageConfig?.base_url}/w1280${props.backdrop_path}`}
+					alt=""
+					className={styles.videoImage}
+				/>
+				<PlayOutlineIcon className={styles.center} />
+			</div>
+			<p className={styles.videoName}>{props?.title}</p>
 		</Link>
 	);
 };

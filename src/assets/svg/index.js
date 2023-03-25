@@ -5,6 +5,7 @@ import { ReactComponent as IMDBIcon } from "./imdb.svg";
 import { ReactComponent as InstagramIcon } from "./instagram.svg";
 import { ReactComponent as LeftArrowIcon } from "./left-arrow.svg";
 import { ReactComponent as PlayIcon } from "./play.svg";
+import { ReactComponent as PlayOutlineIcon } from "./play2.svg";
 import { ReactComponent as RightArrowIcon } from "./right-arrow.svg";
 import { ReactComponent as SearchIcon } from "./search.svg";
 import { ReactComponent as TomatoIcon } from "./tomato.svg";
@@ -19,6 +20,7 @@ export {
 	InstagramIcon,
 	LeftArrowIcon,
 	PlayIcon,
+	PlayOutlineIcon,
 	RightArrowIcon,
 	SearchIcon,
 	TomatoIcon,

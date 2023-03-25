@@ -1,4 +1,9 @@
-import { getCast, getPopularMovies, getUpcomingMovies } from "api";
+import {
+	getCast,
+	getLatestMovies,
+	getPopularMovies,
+	getTopRatedMovies,
+} from "api";
 import {
 	Cast,
 	castSliderSettings,
@@ -6,11 +11,10 @@ import {
 	Movie,
 	movieSliderSettings,
 	Slider,
-	// Video,
-	// videoSliderSettings,
+	Video,
+	videoSliderSettings,
 } from "components";
 import React from "react";
-// import styles from "./home.module.css";
 
 const Home = () => {
 	return (
@@ -27,15 +31,16 @@ const Home = () => {
 				title="New Arrival"
 				InnerComponent={Movie}
 				settings={movieSliderSettings}
-				queryFN={getUpcomingMovies}
+				queryFN={getLatestMovies}
 				queryname="new-arrival"
 			/>
-			{/* <Slider
+			<Slider
 				title="Exclusive Videos"
 				InnerComponent={Video}
 				settings={videoSliderSettings}
-				queryFN={}
-			/> */}
+				queryFN={getTopRatedMovies}
+				queryname="exclusive-videos"
+			/>
 			<Slider
 				title="Featured Casts"
 				InnerComponent={Cast}
