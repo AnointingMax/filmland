@@ -16,3 +16,5 @@ export const getGenres = () => api.get("/genre/movie/list");
 export const getConfig = () => api.get("/configuration");
 
 export const getPopularMovies = () => api.get("/movie/popular");
+
+export const getUpcomingMovies = () => api.get("/movie/upcoming");

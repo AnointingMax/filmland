@@ -1,4 +1,4 @@
-import { getPopularMovies } from "api";
+import { getPopularMovies, getUpcomingMovies } from "api";
 import {
 	// Cast,
 	// castSliderSettings,
@@ -23,19 +23,20 @@ const Home = () => {
 				queryFN={getPopularMovies}
 				queryname="featured"
 			/>
-			{/* <Slider
+			<Slider
 				title="New Arrival"
 				InnerComponent={Movie}
 				settings={movieSliderSettings}
-				queryFN={}
+				queryFN={getUpcomingMovies}
+				queryname="new-arrival"
 			/>
-			<Slider
+			{/* <Slider
 				title="Exclusive Videos"
 				InnerComponent={Video}
 				settings={videoSliderSettings}
 				queryFN={}
-			/>
-			<Slider
+			/> */}
+			{/* <Slider
 				title="Featured Casts"
 				InnerComponent={Cast}
 				settings={castSliderSettings}
